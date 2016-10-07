@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>你喜欢我的哪一种风格？</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="format-detection"content="telephone=no, email=no" />
+  <style>
+    html, body {
+      height: 100%;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      position: relative;
+      top: 0;
+      left: 0;
+    .bg;
+      background-color: #F3F0FB;
+      background-image: url(bg_new.jpg);
+      background-attachment: fixed;
+    }
+    .mask{
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 999;
+    }
+  </style>
+</head>
+
+<body>
+<div class="mask" id="mask_index"></div>
+
+<!--<script src="jquery-1.9.1.min.js"></script>
+<script src="wScratchPad.min.js"></script>-->
+<script src="zepto.js"></script>
+<script src="wScratch.js"></script>
+<script>
+  $("#mask_index").wScratchPad({
+    size        : 40,
+    bg          : "",
+    fg          : "p1_bg.jpg",
+    realtime    : false,
+    scratchDown : null,
+    scratchUp   : function(e, percent){
+      if(percent > 50){
+        this.clear();
+        this.enable("enabled", false);
+        $("#mask_index").hide(300);
+      }
+    },
+    scratchMove : function(e, percent){
+      console.log(percent);
+    },
+    cursor: "crosshair"
+  });
+</script>
+</body>
+</html>
